@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.6 on win32)" generated="20231009 15:26:40.048" rpa="false" schemaversion="4">
+<suite id="s1" name="EditProfile" source="C:\Users\user\Desktop\Noman-2\Automation\Test Cases\EditProfile.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>http://localhost:8000/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231009 15:26:40.265" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8000/'.</msg>
+<status status="PASS" starttime="20231009 15:26:40.265" endtime="20231009 15:26:42.617"/>
+</kw>
+<test id="s1-t1" name="User EditNumber" line="12">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>1 second</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231009 15:26:42.622" endtime="20231009 15:26:42.623"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:42.625" level="INFO">Clicking element 'link=Login'.</msg>
+<status status="PASS" starttime="20231009 15:26:42.624" endtime="20231009 15:26:44.825"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:44.826" level="INFO">Typing text 'noman' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20231009 15:26:44.825" endtime="20231009 15:26:47.982"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:47.983" level="INFO">Typing text '12345' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20231009 15:26:47.982" endtime="20231009 15:26:51.089"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:51.089" level="INFO">Clicking element 'xpath=//input[@type='submit']'.</msg>
+<status status="PASS" starttime="20231009 15:26:51.089" endtime="20231009 15:26:53.793"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Welcome noman</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231009 15:26:53.793" endtime="20231009 15:26:54.823"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Edit Profile</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:54.824" level="INFO">Clicking element 'link=Edit Profile'.</msg>
+<status status="PASS" starttime="20231009 15:26:54.824" endtime="20231009 15:26:56.997"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=phone</arg>
+<arg>${NewPhoneNumber}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231009 15:26:57.001" level="INFO">Typing text '0412345671' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20231009 15:26:56.999" endtime="20231009 15:27:00.150"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Update Profile')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231009 15:27:00.152" level="INFO">Clicking button 'xpath=//button[contains(text(),'Update Profile')]'.</msg>
+<status status="PASS" starttime="20231009 15:27:00.150" endtime="20231009 15:27:05.630"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<var>${alert_text}</var>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20231009 15:27:05.632" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20231009 15:27:08.663" level="INFO">${alert_text} = Profile Updated Successfullly</msg>
+<status status="PASS" starttime="20231009 15:27:05.631" endtime="20231009 15:27:08.663"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${alert_text}</arg>
+<arg>Profile Updated</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231009 15:27:08.664" endtime="20231009 15:27:08.665"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>0412345671</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20231009 15:27:08.666" endtime="20231009 15:27:09.697"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20231009 15:27:10.863" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231009 15:27:09.697" endtime="20231009 15:27:10.863"/>
+</kw>
+<doc>Edit the contact number</doc>
+<tag>EditNumber, success</tag>
+<status status="PASS" starttime="20231009 15:26:42.618" endtime="20231009 15:27:10.864"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231009 15:27:10.865" endtime="20231009 15:27:14.167"/>
+</kw>
+<status status="PASS" starttime="20231009 15:26:40.051" endtime="20231009 15:27:14.167"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">EditNumber, success</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="EditProfile">EditProfile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
